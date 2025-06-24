@@ -6,6 +6,7 @@ from pydantic import field_validator
 
 
 class _EstudianteBase(_pydantic.BaseModel):
+    tipo_identificacion: str
     identificacion: str
     nombres: str
     apellidos: str
