@@ -8,7 +8,6 @@ import sqlalchemy.orm as _orm
 
 import schemas.admin as _admin
 import schemas.estudiante as _estudiante
-import schemas.viajes as _viajes
 
 import services.database as _databaseServices
 import services.student_service as _studentService

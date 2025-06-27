@@ -1,7 +1,6 @@
 import datetime as _dt
 from uuid import UUID
 import pydantic as _pydantic
-from pydantic import field_validator
 
 class _ViajeBase(_pydantic.BaseModel):
     estudiante_id: UUID

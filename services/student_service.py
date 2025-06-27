@@ -1,12 +1,10 @@
-import fastapi.security as _security
-from fastapi import HTTPException, Depends
+from fastapi import HTTPException
 
 # Import the dotenv library to work with enviromental variables
 from dotenv import load_dotenv
 
 # Import the ORM since sqlalchemy
 import sqlalchemy.orm as _orm
-import os
 import io
 import qrcode
 
