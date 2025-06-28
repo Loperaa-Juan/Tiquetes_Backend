@@ -1,5 +1,6 @@
-from uuid import UUID
 import re
+from uuid import UUID
+
 import pydantic as _pydantic
 from pydantic import field_validator
 

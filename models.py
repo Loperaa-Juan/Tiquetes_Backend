@@ -1,11 +1,12 @@
 import datetime as _dt
 from uuid import uuid4 as _uuid4
-import database as _database
-from sqlalchemy.dialects.postgresql import UUID
 
 import sqlalchemy as _sql
 import sqlalchemy.orm as _orm
 from passlib.context import CryptContext
+from sqlalchemy.dialects.postgresql import UUID
+
+import database as _database
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

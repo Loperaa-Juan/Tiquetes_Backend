@@ -1,18 +1,18 @@
-from fastapi import HTTPException
+import io
 
-# Import the dotenv library to work with enviromental variables
-from dotenv import load_dotenv
+import qrcode
 
 # Import the ORM since sqlalchemy
 import sqlalchemy.orm as _orm
-import io
-import qrcode
 
+# Import the dotenv library to work with enviromental variables
+from dotenv import load_dotenv
+from fastapi import HTTPException
 from passlib.context import CryptContext
 
 import models as _models
-from schemas import estudiante as _student
 from schemas import admin as _admin
+from schemas import estudiante as _student
 
 # Create the context for the bcrypt's hashing
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

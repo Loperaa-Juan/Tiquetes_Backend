@@ -1,17 +1,15 @@
-from fastapi import FastAPI, Depends, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.security import OAuth2PasswordRequestForm
-
 from datetime import timedelta
 
 import sqlalchemy.orm as _orm
+from fastapi import Depends, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import OAuth2PasswordRequestForm
 
 import schemas.admin as _admin
 import schemas.estudiante as _estudiante
-
+import services.admin_services as _adminServices
 import services.database as _databaseServices
 import services.student_service as _studentService
-import services.admin_services as _adminServices
 
 app = FastAPI()
 

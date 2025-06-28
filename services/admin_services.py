@@ -1,21 +1,17 @@
-from fastapi import Depends, HTTPException
-import sqlalchemy.orm as _orm
-import models as _models
 import os
-from dotenv import load_dotenv
-
-import services.database as _databaseServices
-
-from passlib.context import CryptContext
-
-from typing import Union
 from datetime import datetime, timedelta
-
-from jose import JWTError, jwt
-
-import schemas.admin as _admin
+from typing import Union
 
 import fastapi.security as _security
+import sqlalchemy.orm as _orm
+from dotenv import load_dotenv
+from fastapi import Depends, HTTPException
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+
+import models as _models
+import schemas.admin as _admin
+import services.database as _databaseServices
 
 load_dotenv()
 
