@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 import sqlalchemy.orm as _orm
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
 
@@ -80,11 +80,12 @@ async def get_students(
 
 @app.put("/api/v1/estudiantes/tickets/{identification}", tags=["Estudiante"])
 def update_tickets(
-    student_id: str,
-    tickets: int,
+    student_id: str = Form(...),
+    nro_tickets: str = Form(...),
     db: _orm.session = Depends(_databaseServices.get_db),
     user: _estudiante.Estudiante = Depends(_adminServices.get_current_user),
 ):
+    tickets = int(nro_tickets)
     estudiante = _studentService.update_tickets(
         db=db, student_identification=student_id, tickets_number=tickets, admin=user
     )
@@ -93,7 +94,7 @@ def update_tickets(
 
 @app.put("/api/v1/estudiantes/tickets/delete/{identificacion}", tags=["Estudiante"])
 def discount_ticket(
-    identification: str,
+    identification: str = Form(...),
     db: _orm.session = Depends(_databaseServices.get_db),
     user: _estudiante.Estudiante = Depends(_adminServices.get_current_user),
 ):
