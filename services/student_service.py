@@ -21,7 +21,7 @@ load_dotenv()
 
 
 async def create_student(student: _student.EstudianteCreate, db: _orm.session):
-    qr_data = f"https://tiquetes-frontend.vercel.app/{student.identificacion}"
+    qr_data = f"https://tiquetes-frontend.vercel.app/tickets/{student.identificacion}"
 
     qr = qrcode.make(data=qr_data)
     qr_byte_array = io.BytesIO()
